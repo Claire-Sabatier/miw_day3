@@ -31,18 +31,60 @@ if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
     <title></title>
 
     <style type="text/css">
-        .delivery_sent {
-            background-color: green;
+        form{
+            margin-top: 25%; 
+            margin-left: 20%;
+        }
+        .email{
+            height: 40px; 
+            width: 33%; 
+            border-color: #B2B2B2;
+            border-radius: 5px;
+        }
+        .submit{
+            width: 33%; 
+            height: 45px; 
+            background-color: #C30078; 
+            border: none; 
+            border-radius: 5px; 
+            color: #FFFF;
+        }
+        
+        .delivery_sent .sent{
+            display: block;
+        }
+        .delivery_sent form{
+            display: none;
+        }
+        .sent{
+            display: none; 
+            height: 200px; 
+            width: 300px; 
+            background-color: rgba(255,255,255,0.5);
+            margin-left: 40%; 
+            margin-top: 20%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 30px;
+            
+            border: 2px solid #707070;
+        }
+        img{
+            margin-left: 15%;
+            
         }
     </style>
 
 </head>
-<body class="<?= $body_class ?>">
+<body class="<?= $body_class ?>" style="background-image: url('./pereNoel.jpg'); background-size: cover;">
 
 <form action="#" method="post">
-    <input type="email" name="email" placeholder="Ton email de star..." required/>
-    <input type="submit" value="Submit"/>
+    <input class="email" type="email" name="email" placeholder="Ton email de star..." required/>
+    <input class="submit" type="submit" value="Inscris-toi !" />
 </form>
+<div class="sent">
+    <img src="./sent.png" alt="Mail envoyé">
+</div>
 
 </body>
 </html>

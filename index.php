@@ -24,27 +24,37 @@ if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
 
 
 ?><!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" >
 
 <head>
 
-    <title></title>
+    <title>La super soirée des MIW</title>
 
     <style type="text/css">
+        body  {
+            height: 1300px;
+            background-image: url('https://i.imgur.com/AEOWzJp.png'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position:center;
+        }
+
         form{
-            margin-top: 25%; 
+            margin-top: 50%; 
             margin-left: 20%;
         }
         .email{
-            height: 40px; 
-            width: 33%; 
+            height: 60px; 
+            width: 50%; 
             border-color: #B2B2B2;
             border-radius: 5px;
+            font-size : 35px;
         }
         .submit{
             width: 33%; 
-            height: 45px; 
+            height: 70px; 
             background-color: #C30078; 
+            font-size : 35px;
             border: none; 
             border-radius: 5px; 
             color: #FFFF;
@@ -73,18 +83,40 @@ if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
             margin-left: 15%;
             
         }
+
+        @media screen and (min-width: 768px){
+            body  {
+                height:0; 
+                background-position: top;
+            }
+            form{
+                margin-top: 20%; 
+                margin-left: 20%;
+            }
+            .email{
+                height: 40px; 
+                width: 50%; 
+                font-size : 20px;
+            }
+            .submit{
+                width: 33%; 
+                height: 40px; 
+                font-size : 20px;
+            }
+            
+        }
     </style>
 
 </head>
-<body class="<?= $body_class ?>" style="background-image: url('./pereNoel.jpg'); background-size: cover;">
+<body class="<?= $body_class ?>" style="">
 
-<form action="#" method="post">
-    <input class="email" type="email" name="email" placeholder="Ton email de star..." required/>
-    <input class="submit" type="submit" value="Inscris-toi !" />
-</form>
-<div class="sent">
-    <img src="./sent.png" alt="Mail envoyé">
-</div>
+    <form action="#" method="post">
+        <input class="email" type="email" name="email" placeholder="Ton email de star..." required/>
+        <input class="submit" type="submit" value="Inscris-toi !" />
+    </form>
+    <div class="sent">
+        <img src="https://i.imgur.com/oDxBR9f.png" alt="Mail envoyé">
+    </div>
 
 </body>
 </html>

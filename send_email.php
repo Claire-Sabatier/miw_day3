@@ -13,19 +13,29 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-    //$mail->isSMTP();                                            // Send using SMTP
-    $mail->Host = 'mail.ovh.net';                    // Set the SMTP server to send through
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER; 
+    $mail->CharSet = "UTF-8";                     // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port       = 587; 
+    $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+                        // Set the SMTP server to send through
     $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-    $mail->Username = 'VOTRE_LOGIN';                     // SMTP username
-    $mail->Password = 'PASSWORD';                               // SMTP password
-    //  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-    //  $mail->Port       = 587;                                    // TCP port to connect to
+    $mail->Username = 'claire08.sabatier@gmail.com';                     // SMTP username
+    $mail->Password = 'claire1109002539t';                               // SMTP password
+    
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );                                   // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('newsletter@miw.ovh', 'MIW Party');
-    $mail->addAddress('your-name@mix.org', 'Leon');     // Add a recipient
-    $mail->addCC('newsletter@miw.ovh');
+    $mail->setFrom('claire08.sabatier@gmail.com', 'MIW Party');
+    $mail->addAddress('claire08.sabatier@gmail.com', 'Claire');     // Add a recipient
+   // $mail->addCC('claire08.sabatier@gmail.com');
 
     // Attachments
 //    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments

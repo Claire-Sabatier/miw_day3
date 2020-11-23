@@ -24,25 +24,99 @@ if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
 
 
 ?><!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" >
 
 <head>
 
-    <title></title>
+    <title>La super soirée des MIW</title>
 
     <style type="text/css">
-        .delivery_sent {
-            background-color: green;
+        body  {
+            height: 1300px;
+            background-image: url('https://i.imgur.com/AEOWzJp.png'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position:center;
+        }
+
+        form{
+            margin-top: 50%; 
+            margin-left: 20%;
+        }
+        .email{
+            height: 60px; 
+            width: 50%; 
+            border-color: #B2B2B2;
+            border-radius: 5px;
+            font-size : 35px;
+        }
+        .submit{
+            width: 33%; 
+            height: 70px; 
+            background-color: #C30078; 
+            font-size : 35px;
+            border: none; 
+            border-radius: 5px; 
+            color: #FFFF;
+        }
+        
+        .delivery_sent .sent{
+            display: block;
+        }
+        .delivery_sent form{
+            display: none;
+        }
+        .sent{
+            display: none; 
+            height: 200px; 
+            width: 300px; 
+            background-color: rgba(255,255,255,0.5);
+            margin-left: 40%; 
+            margin-top: 20%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 30px;
+            
+            border: 2px solid #707070;
+        }
+        img{
+            margin-left: 15%;
+            
+        }
+
+        @media screen and (min-width: 768px){
+            body  {
+                height:0; 
+                background-position: top;
+            }
+            form{
+                margin-top: 20%; 
+                margin-left: 20%;
+            }
+            .email{
+                height: 40px; 
+                width: 50%; 
+                font-size : 20px;
+            }
+            .submit{
+                width: 33%; 
+                height: 40px; 
+                font-size : 20px;
+            }
+            
         }
     </style>
 
 </head>
-<body class="<?= $body_class ?>">
+<body class="<?= $body_class ?>" style="">
 
-<form action="#" method="post">
-    <input type="email" name="email" placeholder="Ton email de star..." required/>
-    <input type="submit" value="Submit"/>
-</form>
+    <form action="#" method="post">
+        <input class="email" type="email" name="email" placeholder="Ton email de star..." required/>
+        <input class="submit" type="submit" value="Inscris-toi !" />
+    </form>
+    <div class="sent">
+        <img src="https://i.imgur.com/oDxBR9f.png" alt="Mail envoyé">
+    </div>
 
 </body>
 </html>

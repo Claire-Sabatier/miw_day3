@@ -6,7 +6,7 @@
 if (!empty($_POST['email'])) {
 
     // Sending invitation by email
-    header('Location: send_email.php');
+    header('Location: send_email.php?email='.$_POST['email']);
     exit;
 
 }
@@ -31,14 +31,17 @@ if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
     <title>La super soirée des MIW</title>
 
     <style type="text/css">
+    /* version mobile */
         body  {
             height: 1300px;
             background-image: url('https://i.imgur.com/AEOWzJp.png'); 
+            /* ajout d'une couleur de fond dans le cas où l'image charge mal */
+            background-color: #00913D;
             background-size: cover; 
             background-repeat: no-repeat; 
             background-position:center;
         }
-
+        /* alignement de la zone d'entrée */
         form{
             margin-top: 50%; 
             margin-left: 20%;
@@ -79,16 +82,18 @@ if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
             
             border: 2px solid #707070;
         }
+        /* placement de l'image de l'envoi réussi */
         img{
             margin-left: 15%;
             
         }
-
+        /* version pc/tablette */
         @media screen and (min-width: 768px){
             body  {
                 height:0; 
                 background-position: top;
             }
+            /* diminution de la taille de la zone d'entrée */
             form{
                 margin-top: 20%; 
                 margin-left: 20%;
